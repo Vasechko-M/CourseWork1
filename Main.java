@@ -4,7 +4,6 @@ public class Main {
     public static void main(String[] args) {
 
 
-
         employees[0] = new Employees("Иванов Иван Иванович", 4, 123);
         employees[1] = new Employees("Сидоров Степан Геннадьевич", 4, 471);
         employees[2] = new Employees("Петров Алексей Викторович", 3, 194);
@@ -23,17 +22,19 @@ public class Main {
         printMaxSalaryEmployees();
         System.out.println("Максимальная ЗП составляет: " + printMaxSalaryEmployees());
         printAverageSalaryEmployees();
-        System.out.println("Среднее значение ЗП составляет: "+ printAverageSalaryEmployees());
-
+        System.out.println("Среднее значение ЗП составляет: " + printAverageSalaryEmployees());
+        printFullnameEmployees();
 
 
     }
+
     public static void printAllEmployees() {
         for (Employees e : employees) {
-           System.out.println(e);
+            System.out.println(e);
         }
 
     }
+
     public static double printSumSalaryEmployees() {
 
         double totalSalary = 0;
@@ -45,25 +46,27 @@ public class Main {
 
 
     }
+
     public static Employees printMinSalaryEmployees() {
         Employees minSalaryEmployees = employees[0];
         double minSalary = employees[0].getSalary();
 
         for (Employees e : employees)
-        if  (e.getSalary() < minSalary){
-            minSalary = e.getSalary();
-            minSalaryEmployees = e;
+            if (e.getSalary() < minSalary) {
+                minSalary = e.getSalary();
+                minSalaryEmployees = e;
 
-        }
+            }
         return minSalaryEmployees;
 
     }
+
     public static Employees printMaxSalaryEmployees() {
         Employees maxSalaryEmployees = employees[0];
         double maxSalary = employees[0].getSalary();
 
         for (Employees e : employees)
-            if  (e.getSalary() > maxSalary){
+            if (e.getSalary() > maxSalary) {
                 maxSalary = e.getSalary();
                 maxSalaryEmployees = e;
 
@@ -71,17 +74,23 @@ public class Main {
         return maxSalaryEmployees;
 
     }
+
     public static double printAverageSalaryEmployees() {
 
         double averageSalary = 0;
         double totalSalary = 0;
         for (Employees e : employees) {
             totalSalary = totalSalary + e.getSalary();
-            averageSalary = totalSalary/10;
+            averageSalary = totalSalary / 10;
 
         }
         return averageSalary;
 
+    }
 
+    public static void printFullnameEmployees() {
+        for (Employees e : employees) {
+            System.out.println(e.getFullname());
+        }
     }
 }
