@@ -23,6 +23,7 @@ public class Main {
         System.out.println("Максимальная ЗП составляет: " + printMaxSalaryEmployees());
         printAverageSalaryEmployees();
         System.out.println("Среднее значение ЗП составляет: " + printAverageSalaryEmployees());
+        printFullnameEmployees();
 
 
     }
@@ -85,6 +86,11 @@ public class Main {
         }
         return averageSalary;
 
+    }
 
+    public static void printFullnameEmployees() {
+        for (Employees e : employees) {
+            System.out.println(e.getFullname());
+        }
     }
 }
